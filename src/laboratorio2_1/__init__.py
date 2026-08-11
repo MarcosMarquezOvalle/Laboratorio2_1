@@ -8,10 +8,11 @@ try:
         print(json_string)
         data = json.loads(json_string)
 
-    print(data['name'])         # Output: Alice
-    print(data['age'])          # Output: 30
-    print(data['is_employee'])  # Output: True
+    for key, value in data.items():
+        print(f"{key}: {value}")
+
     data['adress'] = '123 Main St'
+
     json_string_updated = json.dumps(data)
 
     print(json_string_updated)
